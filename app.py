@@ -11,7 +11,7 @@ load_dotenv()
 HOST_IP = os.environ.get("HOST_IP")
 HOST_PORT = os.environ.get("HOST_PORT")
 APP_SECRET_KEY = os.environ.get("APP_SECRET_KEY")
-print(APP_SECRET_KEY)
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = APP_SECRET_KEY
 
