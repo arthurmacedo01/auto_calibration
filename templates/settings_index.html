@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Configuração {% endblock %}</h1>
+
+<form method="post">
+    <div class="settings_form">
+        <div class="form-group">
+            <label for="ini_freq">Frequência Inicial (MHz)</label>
+            <input type="number" step="0.001" name="ini_freq"
+                placeholder="Frequência Inicial" class="form-control"
+                value="{{ request.form['ini_freq'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="final_freq">Frequência Final (MHz)</label>
+            <input type="number" step="0.001" name="final_freq"
+            placeholder="Frequência Final" class="form-control"
+            value="{{ request.form['final_freq'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="freq_step">Passo da Frequencia (MHz)</label>
+            <input type="number" step="0.001" name="freq_step"
+                placeholder="Passo da Frequencia" class="form-control"
+                value="{{ request.form['freq_step'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="ini_ampl">Amplitude Inicial (dBm)</label>
+            <input type="number" step="0.001" name="ini_ampl"
+                placeholder="Amplitude Inicial" class="form-control"
+                value="{{ request.form['ini_ampl'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="final_ampl">Amplitude Final (dBm)</label>
+            <input type="number" step="0.001" name="final_ampl"
+            placeholder="Amplitude Final" class="form-control"
+            value="{{ request.form['final_ampl'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="ampl_step">Passo da Amplitude (dBm)</label>
+            <input type="number" step="0.001" name="ampl_step"
+                placeholder="Passo da ampluencia" class="form-control"
+                value="{{ request.form['ampl_step'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="n_readings">Leituras por configuração</label>
+            <input type="number" step="1" name="n_readings"
+                placeholder="Leituras por configuração" class="form-control"
+                value="{{ request.form['n_readings'] }}" required></input>
+        </div>
+        <div class="form-group">
+            <label for="interval">Intervalo entre as leituras (s)</label>
+            <input type="number" step="0.001" name="interval"
+                placeholder="Intervalo entre as leituras" class="form-control"
+                value="{{ request.form['interval'] }}" required></input>
+        </div>
+    </div>
+    <div class="form-group settings_button_center">
+        <button type="submit" class="btn btn-primary">Iniciar</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,8 @@
+.settings_form{
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.settings_button_center{
+    text-align: center;
+}
