@@ -4,6 +4,24 @@
 <h1>{% block title %} Configuração {% endblock %}</h1>
 
 <form method="post">
+    <div class="selector_container">
+        <div class="form-group">
+            <label for="signal_generator">Gerador de Sinal</label>
+        <select class="form-control" name="signal_generator" required>
+            {% for active_resource in active_resource_list %}                
+                <option value="{{ active_resource['resource'] }}">{{active_resource["idn"]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="power_meter">Power Meter</label>
+        <select class="form-control" name="power_meter" required>
+            {% for active_resource in active_resource_list %}                
+            <option value="{{ active_resource['resource'] }}">{{active_resource["idn"]}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    </div>
     <div class="settings_form">
         <div class="form-group">
             <label for="ini_freq">Frequência Inicial (MHz)</label>
